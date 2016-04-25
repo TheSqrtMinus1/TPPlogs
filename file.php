@@ -9,20 +9,29 @@
 <body>
 <div class="class">
 <?php
+$pg = 0;
+$pagenum = 0;
 $file = 'tpp.log';
 $searchfor = $_GET['query'];
+$pagenum = $_GET['page'];
+$pg = $pagenum * 100 + 1;
 $contents = file_get_contents($file);
 $pattern = preg_quote($searchfor, '/');
 $pattern = "/^.*$pattern.*\$/m";
 if(preg_match_all($pattern, $contents, $matches)){
 echo "Found matches:\n";
-foreach ($matches[0] as $str){
+foreach (array_slice($matches[0],$pg,100,true) as $str){
 echo '<p>'.htmlspecialchars($str).'</p>';echo "\r\n";
 }
 }
 else{
    echo "No matches found";
 }
+$pgnext = $pagenum + 1;
+$nexturl = "file.php/?query"."$searchfor"."&page="."$pgnext";
+
+echo "<a class='scroll' href='$nexturl'>next</a>";
+
 ?>
 </div>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -32,5 +41,10 @@ else{
                 $('.class').kappa();
             });
         </script>
+        <script src="/resources/js/jquery.jscroll.js"></script>
+
+<script>
+$('.scroll').jscroll();
+</script>
 </body>
 </html>
