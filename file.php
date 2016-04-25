@@ -27,7 +27,7 @@ else{
 </div>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
         <script src="/resources/js/kappa.js"></script>
-<script>
+	<script>
             $(function () {
                 $('.class').kappa();
             });
