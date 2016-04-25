@@ -7,7 +7,7 @@
 <link href='/resources/css/tpp.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<div class="class">
+<div class="main">
 <?php
 $pg = 0;
 $pagenum = 0;
@@ -27,10 +27,12 @@ echo '<p>'.htmlspecialchars($str).'</p>';echo "\r\n";
 else{
    echo "No matches found";
 }
-$pgnext = $pagenum + 1;
-$nexturl = "file.php/?query"."$searchfor"."&page="."$pgnext";
+echo "</div>";
 
-echo "<a class='scroll' href='$nexturl'>next</a>";
+$pgnext = $pagenum + 1;
+$nexturl = "file.php?query="."$searchfor"."&page="."$pgnext";
+
+echo "<a id='infscroll' href='$nexturl'>next</a>";
 
 ?>
 </div>
@@ -38,13 +40,8 @@ echo "<a class='scroll' href='$nexturl'>next</a>";
         <script src="/resources/js/kappa.js"></script>
 	<script>
             $(function () {
-                $('.class').kappa();
+                $('.main').kappa();
             });
         </script>
-        <script src="/resources/js/jquery.jscroll.js"></script>
-
-<script>
-$('.scroll').jscroll();
-</script>
 </body>
 </html>

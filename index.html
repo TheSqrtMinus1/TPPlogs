@@ -31,7 +31,7 @@ echo $filename . ': ' . filesize($filename) . ' bytes';
 <?php
 $handle = fopen("tpp.log", "r");
 if ($handle) {
-    for ($i = 0; $i < 500; $i++) {
+    for ($i = 0; $i < 100; $i++) {
         if (($line = fgets($handle)) !== false) {
 	echo '<p>'.htmlspecialchars($line).'</p>';echo "\r\n";
 	flush();
