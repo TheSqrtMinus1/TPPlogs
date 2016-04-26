@@ -37,7 +37,7 @@ echo "<a id='infscroll' href='$nexturl'>next</a>";
 ?>
 </div>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-        <script src="/resources/js/kappa.js"></script>
+        <script src="/resources/js/Kappa.js/dist/kappa.min.js"></script>
 	<script>
             $(function () {
                 $('.main').kappa();
