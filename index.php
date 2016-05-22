@@ -18,6 +18,8 @@ to search for people who have used "/me", just search
 </p>
 <pre>"__*_"</pre>
 <p>(space space star space)</p>
+<p>to search for usernames, type the username in lowercase followed by a "&gt;" like this:</p>
+<pre>username&gt;</pre>
 <p>Download the file:</p>
 <a href="tpp.log" download>
 <?php
@@ -27,7 +29,7 @@ echo $filename . ': ' . filesize($filename) . ' bytes';
 ?>
 </a>
 <hr>
-<div class="class">
+<div class="emotes">
 <?php
 $handle = fopen("tpp.log", "r");
 if ($handle) {
@@ -45,7 +47,7 @@ if ($handle) {
 	<script src="/resources/js/kappa.js"></script>
 	<script>
             $(function () {
-                $('.class').kappa();
+                $('.emotes').kappa();
             });
         </script>
 </body>
