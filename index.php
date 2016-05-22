@@ -10,17 +10,22 @@
 <form action="file.php" method="get">
 Query: <input type="text" name="query" required>
 Page Number: <input type="text" name="page">
+<br>
+<br>
+is Case sensitive:
+<br>
+<input type="radio" name="case" value="yes" checked>yes<br>
+<input type="radio" name="case" value="no">no<br>
 <input type="submit">
 </form>
 <br>
 <p>
 to search for people who have used "/me", just search
 </p>
-<pre>"__*_"</pre>
-<p>(space space star space)</p>
+<pre>/me username</pre>
 <p>to search for usernames, type the username in lowercase followed by a "&gt;" like this:</p>
 <pre>username&gt;</pre>
-<p>Download the file:</p>
+<p>Download the full log file here:</p>
 <a href="tpp.log" download>
 <?php
 $filename = 'tpp.log';
