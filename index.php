@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXZwQWcAAAAgAAAAIACH+pydAAABAUlEQVRIx+2VvQ3CMBBGPQojuKSkpMwYlJQpGYERMoJHSJkRKBkhpTvIZ+mss3MXnwSIAopPUeK79+z82YUQ3CfjfkPgvX9IeUlQgPazGItMhd93Y44EL8bdVZWI8DjGAjAdYgqHo4bXaZL1CpbCevZvE6xuzdLUuj1FLWIVEPw2zcVRk5CgXsVKkGciwDVJ7rEIzn7KgJYg1TL4yY9tAYq0974OBDwmwbHrCgnOKRqY4KgxCXiGYXklY0xHnEtQnk0BSfr+khsAp9QwHvSYPjQU4WECiKZ6BRIY9Ri3fcmChIJrUjR482+KRg1K4C14cz+gXzGB6lj2he9tOP9Nn/IEfN0fBbbre5sAAAAASUVORK5CYII=">
-<title> TPP Logs </title>
+<link rel="icon" type="image/png" href="./favicon.png">
+<title> Twitch Logs </title>
 <link href='https://fonts.googleapis.com/css?family=Inconsolata%7CUbuntu' rel='stylesheet' type='text/css'>
-<link href='/resources/css/tpp.css' rel='stylesheet' type='text/css'>
+<link href='/resources/css/twitch.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <form action="file.php" method="get">
@@ -26,9 +26,9 @@ to search for people who have used "/me", just search
 <p>to search for usernames, type the username in lowercase followed by a "&gt;" like this:</p>
 <pre>username&gt;</pre>
 <p>Download the full log file here:</p>
-<a href="tpp.log" download>
+<a href="twitch.log" download>
 <?php
-$filename = 'tpp.log';
+$filename = 'twitch.log';
 clearstatcache();
 echo $filename . ': ' . filesize($filename) . ' bytes';
 ?>
@@ -36,7 +36,7 @@ echo $filename . ': ' . filesize($filename) . ' bytes';
 <hr>
 <div class="emotes">
 <?php
-$handle = fopen("tpp.log", "r");
+$handle = fopen("twitch.log", "r");
 if ($handle) {
     for ($i = 0; $i < 100; $i++) {
         if (($line = fgets($handle)) !== false) {
